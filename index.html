@@ -1,12 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Positioning</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
 
-</body>
+
+        <style>
+        body {
+          background-color: black;
+          height: 300vh;
+          padding: 0;
+          margin: 0;
+        }
+
+        div {
+          width: 50%;
+          height: 100px;
+        }
+
+        .static {
+          background-color: blue;
+          position: static;
+        }
+
+        .relative {
+          background-color: yellow;
+          position: relative;
+          /*left: 20px;*/
+        }
+
+        .fixed {
+          background-color: purple;
+          position: fixed;
+          left: 50%;
+          top: 0px;
+        }
+
+        .absolute {
+          background-color: green;
+          position: absolute;
+          left: 50%;
+          z-index: 1000;
+        }
+
+        .absolute2 {
+          background-color: pink;
+          position: absolute;
+          border-radius: 50px;
+          right: 0;
+        }
+
+        .sticky {
+          background-color: red;
+          position: -webkit-sticky; /* for browser compatibility */
+          position: sticky;
+          top: 0px;
+          padding: 0px;
+          z-index: 100;
+        }
+
+        .center{
+          background: orange;
+          width: 50px;
+          height: 50px;
+          position: fixed;
+          top:50%;
+          left:50%;
+          transform:translate(-50%,-50%);
+          -webkit-transform:translate(-50%,-50%);
+          z-index: 300;
+        }
+
+
+
+        </style>
+
+  </head>
+
+  <body>
+    
+    <div class="static"></div>
+
+    <div class="relative"></div>
+      
+    <div class="sticky"></div>
+      
+    <div class="absolute"></div>
+      
+    <div class="fixed"></div> 
+
+    <div class="center"></div>
+
+    <div class="relative">
+      <div class="absolute2"></div>
+    </div>
+
+  </body>
 </html>
