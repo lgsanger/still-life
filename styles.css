@@ -1,1 +1,179 @@
-/* styles.css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e75a3a; /* orange background */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.scene {
+  position: relative;
+  width: 960px;
+  height: 540px;
+}
+
+/* Left white circle */
+
+.sphere {
+  position: absolute;
+  left: 80px;
+  bottom: 60px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 28%,
+    #ffffff 0%,
+    #e8e8e8 35%,
+    #595a5c 70%,
+    #2f3030 100%
+  );
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Lower orange in front of the circle */
+
+.orange-wrap {
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.orange-wrap.orange-front {
+  position: absolute;
+  left: 250px;
+  bottom: 40px;
+  width: 150px;
+  height: 150px;
+}
+
+.orange-wrap .orange {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #f6a230;
+  filter: url(#grain);
+}
+
+.orange-wrap.orange-front .leaf {
+  position: absolute;
+  right: 22px;
+  top: 30px;
+  width: 70px;
+  height: 35px;
+  background-color: #24582f;
+  border-radius: 35px;
+}
+
+/* Center computer */
+
+.mac {
+  position: absolute;
+  left: 50%;
+  bottom: 80px;
+  transform: translateX(-50%);
+}
+
+.mac-body {
+  position: relative;
+  width: 320px;
+  height: 260px;
+  background-color: #c9b1aa;
+}
+
+.mac-screen {
+  position: absolute;
+  top: 60px;
+  left: 40px;
+  width: 240px;
+  height: 150px;
+  background-color: #1b1411;
+}
+
+.mac-slot {
+  display: none;
+}
+
+.mac-keyboard {
+  position: absolute;
+  top: 260px;
+  left: -10px;
+  width: 340px;
+  height: 80px;
+  background-color: #c9b1aa;
+}
+
+.mac-keyboard::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 24px;
+  right: 24px;
+  bottom: 18px;
+  background-color: #b29b94;
+}
+
+/* Orange on top of computer */
+
+.orange-wrap.orange-top {
+  position: absolute;
+  top: -70px;
+  right: -40px;
+  width: 120px;
+  height: 120px;
+}
+
+.orange-wrap.orange-top .leaf {
+  position: absolute;
+  top: 24px;
+  left: 60px;
+  width: 70px;
+  height: 32px;
+  background-color: #24582f;
+  border-radius: 32px;
+}
+
+/* Bottle on the right */
+
+.bottle {
+  position: absolute;
+  right: 110px;
+  bottom: 70px;
+  width: 170px;
+  height: 340px;
+}
+
+.bottle-glass {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 170px;
+  height: 300px;
+  background-color: #9fd8f4;
+  border-radius: 40px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  opacity: 0.6;
+}
+
+.bottle-body {
+  display: none;
+}
+
+/* Little brown rectangle sitting on top of blue bottle */
+.bottle-brown-rect {
+  position: absolute;
+  bottom: 300px; /* aligns with top of .bottle-glass */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 28px;
+  background-color: #8b5a3c;
+  z-index: 1;
+}
